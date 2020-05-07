@@ -7,6 +7,7 @@ import TreeTest from './components/TreeTest';
 function App() {
   return (
     <div className="App">
+      <div>HELLO FROM REACT</div>
       <TreeTest />
     </div>
   );
