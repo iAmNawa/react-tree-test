@@ -19,6 +19,8 @@ export default class TreeTest extends Component {
   handleSearchOnChange = e => {
     this.setState({
       searchString: e.target.value
+    },() => {
+      console.log(this.state.searchString)
     });
   };
 
@@ -29,6 +31,12 @@ export default class TreeTest extends Component {
   };
 
   render() {
+    const {
+      treeData,
+      searchString,
+      searchFocusIndex,
+      searchFoundCount
+    } = this.state;
     return (
       <div style={{ height: '100vh' }}>
         <button
