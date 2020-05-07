@@ -9,10 +9,12 @@ export default class TreeTest extends Component {
 
     this.state = {
       searchString: '',
-      treeData: [
-        { title: 'Paul', children: [{ title: 'Dog', children:[{title: 'Spot' },{title:'Daisy'}] }, {title: 'Cat'}] },
-        { title: 'Jon', children: [{ title: 'Fish' }, { title: 'Snake' }] }
-      ],
+      treeData: [{title: 'USA', children: [
+                  { title: 'California', children: [{ title: 'Marin County', children:[{title: 'Sausalito' },{title:'Tiburon'},{title:'La Jolla'}] }, {title: 'Los Angeles County', children:[{title: 'Long Beach' },{title:'Venice Beach'}] }, {title: 'San Diego', children:[{title: 'Chula Vista'},{title:'Toronto'}] }] },
+                 ]},
+                 {title: 'Canada', children: [
+                    {title: 'Ontario'},{title:'Nova Scotia'}
+                  ]}]
     };
   }
 
@@ -38,7 +40,7 @@ export default class TreeTest extends Component {
       searchFoundCount
     } = this.state;
     return (
-      <div style={{ height: '100vh' }}>
+      <div style={{ height: '100%' }}>
         <button
             name="expand"
             onClick={this.toggleNodeExpansion.bind(this, true)}
@@ -57,6 +59,7 @@ export default class TreeTest extends Component {
         <SortableTree
           treeData={this.state.treeData}
           onChange={treeData => this.setState({ treeData })}
+          isVirtualized={false}
         />
       </div>
     );
