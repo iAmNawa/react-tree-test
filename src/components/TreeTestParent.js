@@ -17,7 +17,7 @@ export default class TreeTestParent extends Component {
                  ]},
                  {title: (<div>Canada <span className="flag-icon flag-icon-ca"></span></div>), children: [
                     {title: 'Ontario'},{title:'Nova Scotia'}
-                  ]}]
+                ]}]
     };
   }
 
