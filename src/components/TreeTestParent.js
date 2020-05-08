@@ -20,14 +20,6 @@ export default class TreeTestParent extends Component {
     };
   }
 
-  handleSearchOnChange = e => {
-    this.setState({
-      searchString: e.target.value
-    },() => {
-      console.log(this.state.searchString)
-    });
-  };
-
   toggleNodeExpansion = expanded => {
     this.setState(prevState => ({
       treeData: toggleExpandedForAll({ treeData: prevState.treeData, expanded })
@@ -47,8 +39,8 @@ export default class TreeTestParent extends Component {
     } = this.state;
     return (
       <div>
-        <TreeTestC1 stateSetter={this.stateSetter} treeData={this.state.treeData} className='child-component'/>
-        <TreeTestC2 stateSetter={this.stateSetter} treeData={this.state.treeData} className='child-component'/>
+        <TreeTestC1 toggleNodeExpansion={this.toggleNodeExpansion} stateSetter={this.stateSetter} treeData={this.state.treeData} className='child-component'/>
+        <TreeTestC2 toggleNodeExpansion={this.toggleNodeExpansion} stateSetter={this.stateSetter} treeData={this.state.treeData} className='child-component'/>
       </div>
     );
   }
