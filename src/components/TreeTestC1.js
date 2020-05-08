@@ -20,8 +20,6 @@ export default class TreeTestC1 extends Component {
         >
             Collapse all
         </button>
-        <label>Search: </label>
-        <input onChange={this.handleSearchOnChange} />
         <SortableTree
           treeData={this.props.treeData}
           onChange={treeData => this.props.stateSetter(treeData)}
