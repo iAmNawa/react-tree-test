@@ -6,7 +6,7 @@ import './TreeTest.css';
 export default class TreeTestC1 extends Component {
   render() {
     return (
-      <div style={{ height: '100%', maxWidth: '500px;' }}>
+      <div style={{ height: '100%', maxWidth: '500px' }}>
         <button
             name="expand"
             onClick={this.props.toggleNodeExpansion.bind(this, true)}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SortableTree, { toggleExpandedForAll } from "react-sortable-tree";
 import 'react-sortable-tree/style.css'; // This only needs to be imported once in your app
+import 'flag-icon-css/css/flag-icon.css';
 import TreeTestC1 from './TreeTestC1';
 import TreeTestC2 from './TreeTestC2';
 import './TreeTest.css';
@@ -11,10 +12,10 @@ export default class TreeTestParent extends Component {
 
     this.state = {
       searchString: '',
-      treeData: [{title: 'USA', children: [
+      treeData: [{title: (<div>USA <span className="flag-icon flag-icon-us"></span></div>), children: [
                   { title: 'California', children: [{ title: 'Marin County', children:[{title: 'Sausalito' },{title:'Tiburon'},{title:'La Jolla'}] }, {title: 'Los Angeles County', children:[{title: 'Long Beach' },{title:'Venice Beach'}] }, {title: 'San Diego', children:[{title: 'Chula Vista'},{title:'Toronto'}] }] },
                  ]},
-                 {title: 'Canada', children: [
+                 {title: (<div>Canada <span className="flag-icon flag-icon-ca"></span></div>), children: [
                     {title: 'Ontario'},{title:'Nova Scotia'}
                   ]}]
     };
