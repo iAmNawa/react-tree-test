@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import SortableTree, { toggleExpandedForAll } from "react-sortable-tree";
 import 'react-sortable-tree/style.css'; // This only needs to be imported once in your app
+import TreeTestC1 from './TreeTestC1';
+import TreeTestC2 from './TreeTestC2';
 import './TreeTest.css';
 
-export default class TreeTest extends Component {
+export default class TreeTestParent extends Component {
   constructor(props) {
     super(props);
 
@@ -32,6 +34,10 @@ export default class TreeTest extends Component {
     }));
   };
 
+  stateSetter = (data) => {
+    this.setState({ treeData: data })
+  }
+
   render() {
     const {
       treeData,
@@ -40,27 +46,9 @@ export default class TreeTest extends Component {
       searchFoundCount
     } = this.state;
     return (
-      <div style={{ height: '100%' }}>
-        <button
-            name="expand"
-            onClick={this.toggleNodeExpansion.bind(this, true)}
-        >
-            Expand all
-        </button>
-        <button
-            name="collapse"
-            className="collapse"
-            onClick={this.toggleNodeExpansion.bind(this, false)}
-        >
-            Collapse all
-        </button>
-        <label>Search: </label>
-        <input onChange={this.handleSearchOnChange} />
-        <SortableTree
-          treeData={this.state.treeData}
-          onChange={treeData => this.setState({ treeData })}
-          isVirtualized={false}
-        />
+      <div>
+        <TreeTestC1 stateSetter={this.stateSetter} treeData={this.state.treeData} className='child-component'/>
+        <TreeTestC2 stateSetter={this.stateSetter} treeData={this.state.treeData} className='child-component'/>
       </div>
     );
   }

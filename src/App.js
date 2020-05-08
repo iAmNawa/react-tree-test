@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'react-sortable-tree/style.css';
-import TreeTest from './components/TreeTest';
+import TreeTestParent from './components/TreeTestParent';
 
 function App() {
   return (
     <div className="App">
-      <div>HELLO FROM REACT</div>
-      <TreeTest />
+      <TreeTestParent />
     </div>
   );
 }
